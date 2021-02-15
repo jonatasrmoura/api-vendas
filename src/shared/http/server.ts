@@ -1,8 +1,9 @@
 import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
-import { errors } from 'celebrate';
 import cors from 'cors';
+import { errors } from 'celebrate';
+import { pagination } from 'typeorm-pagination';
 
 import routes from './routes';
 import AppError from '@shared/errors/AppError';
@@ -13,6 +14,8 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use(pagination); // Register the pagination middleware
 
 // para o front-end está consumindo as imagens de avatar dos usuários
 app.use('/files', express.static(uploadConfig.directory));
@@ -37,6 +40,6 @@ app.use(
   },
 );
 
-app.listen(3333, () => {
-  console.log('Server started ON! http://localhost:3333/');
+app.listen(3334, () => {
+  console.log('Server started ON! http://localhost:3334/');
 });
