@@ -8,7 +8,8 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-import Product from '@modules/products/typeorm/entities/Product';
+// import Product from '@modules/products/typeorm/entities/Product';
+import Product from '../../../products/typeorm/entities/Product';
 
 import Order from './Order';
 
