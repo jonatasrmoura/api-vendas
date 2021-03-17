@@ -1,8 +1,10 @@
-// autenticação
+/**
+ * @fileoverview Exportar configuração padrão do jwt
+ */
 
 export default {
   jwt: {
-    secret: process.env.APP_SECRET,
+    secret: String(process.env.APP_SECRET),
     expiresIn: '1d',
   },
 };

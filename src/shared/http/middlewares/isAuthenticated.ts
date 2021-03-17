@@ -1,3 +1,13 @@
+/**
+ * @fileoverview Criar uma forma de proteger as rotas da minha aplicação, exigindo que só sejá
+ * possível acessar esse conteúdo com usuários autenticados na aplicação ou sejá o usuário tem
+ * que ter um token, esse token tem que ser enviado no cabeçalho da requisição e dessa forma a
+ * aplicação consegue validar ou sejá verificar se aquele token ta sendo enviado se é um token válido(se ele não está inspirado)
+ * e também se é um token criado pela a minha aplicação com o hash em APP_SECRET somente os token que seram criados
+ * a partir desse hash que seram válidos, para isso preciso de um moddleware e passar essa configuração para cada rota que
+ * eu quero proteger.
+ */
+
 // verificar se o usuário está autenticado -> middleware de autenticação -> proteger as rotas que vão ser verificadas
 
 import { Request, Response, NextFunction } from 'express';
@@ -18,13 +28,16 @@ export default function isAuthenticated(
   next: NextFunction,
 ): void {
   // verificar se no cabeçalho existe um token
-  const authHeader = request.headers.authorization;
+  const authHeader = request.headers.authorization; // aqui é de onde o token vai vim
 
+  // se não tiver nada neste cabeçalho
   if (!authHeader) {
     throw new AppError('JWT Token is missing.');
   }
 
-  // array token vai ter 2 posições -> Bearer açsd6464JAFPO(&&%/;). -> chave secreta o token
+  // se existe o cabeçalho authorization
+
+  // array token vai ter 2 posições -> Bearer e a chave do token(açsd6464JAFPO(&&%/;). -> chave secreta o token
   const [, token] = authHeader.split(' ');
 
   // verificar se esse token foi criado pela minha aplicação, se ele é válido (se eu posso liberar o acesso)

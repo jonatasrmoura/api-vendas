@@ -1,4 +1,6 @@
-// Controller de autenticação
+/**
+ * @fileoverview Controller de Sessão na aplicação
+ */
 
 import { classToClass } from 'class-transformer';
 import { Request, Response } from 'express';
