@@ -2,14 +2,14 @@
 
 ## Estrutura de pastas:
 
-[*] config - configurações de bibliotecas externas, como por exemplo, autenticação, upload, email, etc.
+config - configurações de bibliotecas externas, como por exemplo, autenticação, upload, email, etc.
 
-[*] modules - abrangem as áreas de conhecimento da aplicação, diretamente relacionados com as regras de negócios da aplicação.
+modules - abrangem as áreas de conhecimento da aplicação, diretamente relacionados com as regras de negócios da aplicação.
 A princípio criaremos os seguintes módulos na aplicação: customers, products, orders e users.
 
-[*] shared - módulos de uso geral compartilhando com mais de um módulo da aplicação, como por exemplo, o server.ts, o arquivo principal de rotas, conexão com banco de dados, seguindo esse principio.
+shared - módulos de uso geral compartilhando com mais de um módulo da aplicação, como por exemplo, o server.ts, o arquivo principal de rotas, conexão com banco de dados, seguindo esse principio.
 
-[*] services - estarão dentro de cada módulo da aplicação e serão responsável por todas as regras que a aplicação precisa atender, como por exemplo:
+services - estarão dentro de cada módulo da aplicação e serão responsável por todas as regras que a aplicação precisa atender, como por exemplo:
 
 - A senha deve ser armazenada com criptografia;
 - Não pode haver mais de um produto com o mesmo nome;
