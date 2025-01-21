@@ -23,6 +23,7 @@ mv src/server.ts src/shared/http/server.ts
 
 ## Configurando o package.json
 Dentro de "scripts" em "dev":
+<br />
 "dev": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/http/server.ts"
 
 ## Configurando as importações
