@@ -10,12 +10,12 @@ import ordersRouter from '@modules/orders/routes/orders.routes';
 
 const routes = Router();
 
-routes.use('/products', productsRouter);
-routes.use('/users', usersRouter);
 routes.use('/sessions', sessionsRouter);
-routes.use('/password', passwordRouter);
 routes.use('/profile', profileRouter);
+routes.use('/password', passwordRouter);
+routes.use('/users', usersRouter);
 routes.use('/customers', customersRouter);
+routes.use('/products', productsRouter);
 routes.use('/orders', ordersRouter);
 
 export default routes;
