@@ -7,7 +7,6 @@ import AppError from '@shared/errors/AppError';
 import EtherealMail from '@config/mail/EtherealMail';
 
 interface IRequest {
-  name: string;
   email: string;
 }
 
