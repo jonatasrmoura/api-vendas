@@ -23,6 +23,6 @@ export default class OrdersController {
       products,
     });
 
-    return response.json(order);
+    return response.status(201).json(order);
   }
 }

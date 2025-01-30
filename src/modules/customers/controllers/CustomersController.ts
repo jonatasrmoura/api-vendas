@@ -35,7 +35,7 @@ export default class CustomersController {
       email,
     });
 
-    return response.json(customer);
+    return response.status(201).json(customer);
   }
 
   public async update(request: Request, response: Response): Promise<Response> {

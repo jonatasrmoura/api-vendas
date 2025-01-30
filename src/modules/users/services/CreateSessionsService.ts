@@ -58,7 +58,7 @@ class CreateSessionsService {
 
     // configurar o token
     // site para gerar código de segurança louco -> http://www.md5.cz/
-    const token = await sign({}, authConfig.jwt.secret, {
+    const token = sign({}, authConfig.jwt.secret, {
       subject: user.id,
       expiresIn: authConfig.jwt.expiresIn,
     });
